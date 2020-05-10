@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <h1>Flats</h1>
+  <ul class="list-group">
+
+
+    <% @flats.each do |flat| %>
+    <li class="list-group-item">
+      <%= link_to flat_path(flat['id']) do %>
+      <div class="card-trip">
+        <img src="<%= flat['imageUrl'] %>" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= flat['name'] %></h2>
+          </div>
+          <h2 class="card-trip-pricing">$<%= flat['price'] %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
